@@ -2,7 +2,7 @@
 
 A **modern, full-stack e-commerce application** showcasing production-ready development practices, DevOps automation, and cloud-native architecture. Built with React.js frontend, Node.js backend, and comprehensive DevOps toolchain.
 
-[![CI/CD](https://github.com/Shakeelkhuhro/ExampleCorp-Ecommerce/workflows/CI/badge.svg)](https://github.com/Shakeelkhuhro/ExampleCorp-Ecommerce/actions)
+[![CI/CD](https://github.com/Shakeelkhuhro/ExampleCorp-Ecommerce/actions)](https://github.com/Shakeelkhuhro/ExampleCorp-Ecommerce/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
