@@ -289,7 +289,6 @@ ansible-playbook -i inventory deploy.yml
 
 ---
 
-## 📸 Screenshots
 
 ### Desktop View
 ![Desktop Homepage](https://via.placeholder.com/800x400?text=Desktop+Homepage)
