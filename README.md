@@ -289,15 +289,6 @@ ansible-playbook -i inventory deploy.yml
 
 ---
 
-
-### Desktop View
-![Desktop Homepage](https://via.placeholder.com/800x400?text=Desktop+Homepage)
-
-### Mobile View
-![Mobile Homepage](https://via.placeholder.com/400x600?text=Mobile+Homepage)
-
----
-
 ## 🧠 Learning Outcomes
 
 - ✅ **Full-Stack Development** - React + Node.js + MongoDB
