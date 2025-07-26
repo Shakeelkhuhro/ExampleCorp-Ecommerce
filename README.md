@@ -160,6 +160,7 @@ npm start
 ### **4. Access Application**
 - 🌐 **Frontend**: http://localhost:3000
 - 🔗 **API**: http://localhost:5000/api
+- 📚 **API Docs**: http://localhost:5000/api/docs
 
 ---
 
