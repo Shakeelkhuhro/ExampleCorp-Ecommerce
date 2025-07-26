@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import ProductsPage from './pages/ProductsPage';
+import './App.css';
 
-const HomePage = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
-      .then(res => setProducts(res.data))
-      .catch(err => console.error(err));
-  }, []);
-
+function App() {
   return (
-    <div>
-      <h2>Featured Products</h2>
-      <ul>
-        {products.map(p => (
-          <li key={p._id}>{p.name} - ${p.price}</li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/products" element={<ProductsPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
-};
+}
 
-export default HomePage;
+export default App;
