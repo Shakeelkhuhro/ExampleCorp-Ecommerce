@@ -1,0 +1,33 @@
+- name: Provision DigitalOcean Droplet
+  hosts: droplet
+  become: true
+  tasks:
+    - name: update apt cache
+      apt:
+        update_cache: yes
+
+    - name: install docker
+      apt:
+        name: docker.io
+        state: present
+    
+    - name: enable and start docker service
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
+
+    - name: install Node.js
+      apt:
+        name: nodejs
+        state: present
+
+    - name: install npm
+      apt:
+        name: npm
+        state: present
+
+    - name: install nginx
+      apt:
+        name: nginx
+        state: present
