@@ -56,61 +56,61 @@ graph TB
     J[Ansible] --> I
 ```
 
-## 🧱 Tech Stack
+## 🌐 Tech Stack
 
-### **Frontend** ⚛️
-- **React 19.1.0** - Modern UI framework
-- **React Router** - Client-side routing
-- **Axios** - HTTP client
-- **Font Awesome** - Icon library
-- **CSS3** - Modern styling with animations
+### Frontend
+- React.js + Axios + TailwindCSS
+- JWT-based auth
+- CI/CD via GitHub Actions
 
-### **Backend** 🟢
-- **Node.js + Express 5.1.0** - Server framework
-- **MongoDB + Mongoose** - Database & ODM
-- **JWT + bcryptjs** - Authentication & security
-- **Express Validator** - Input validation
-- **Helmet + CORS** - Security middleware
-- **Compression** - Response optimization
+### Backend
+- Node.js (Express.js)
+- MongoDB (Mongoose)
+- Redis (Caching sessions)
+- REST APIs with Swagger Docs
+- Middleware (Helmet, CORS, express-validator)
 
-### **DevOps** 🚀
-- **GitHub Actions** - CI/CD automation
-- **Terraform** - Infrastructure as Code
-- **Ansible** - Configuration management
-- **Docker** - Containerization
-- **DigitalOcean** - Cloud hosting
+### DevOps
+- GitHub Actions (CI/CD)
+- Terraform (Infra provisioning)
+- Ansible (Server configuration)
+- Docker + Docker Compose (Containerization)
+- DigitalOcean (Deployment)
 
 ---
 
 ## 📁 Project Structure
 
 ```
+
 ExampleCorp/
-├── 📁 .github/workflows/    # CI/CD automation
-│   └── ci.yaml             # GitHub Actions pipeline
-├── 📁 ansible/             # Configuration management
-├── 📁 backend/             # Node.js/Express API
-│   ├── 📦 package.json     # Dependencies & scripts
-│   ├── 🌱 seed.js          # Database seeding
-│   ├── 🔒 .env.example     # Environment template
-│   └── 📁 src/
-│       ├── 🚀 index.js     # Server entry point
-│       ├── 📁 config/      # Database configuration
-│       ├── 📁 middleware/  # Auth & validation
-│       ├── 📁 models/      # MongoDB schemas
-│       └── 📁 routes/      # API endpoints
-├── 📁 frontend/            # React.js application
-│   ├── 📦 package.json     # Frontend dependencies
-│   ├── 📁 public/          # Static assets
-│   └── 📁 src/
-│       ├── 📱 App.js       # Main component
-│       ├── 📁 components/  # Reusable UI components
-│       └── 📁 pages/       # Page components
-├── 📁 infra/               # Infrastructure as Code
-│   ├── 🏗️ main.tf         # Terraform configuration
-│   ├── 📊 variables.tf    # Input variables
-│   └── 🔒 terraform.tfvars.example
-└── 📋 README.md           # Project documentation
+├── .github/
+│   └── workflows/
+│       ├── ci.yaml                # Continuous Integration workflow
+│       └── cd.yaml                # Continuous Deployment workflow
+│
+├── frontend/                      # Frontend (React) Application
+│   ├── src/
+│   │   ├── components/            # Reusable UI components
+│   │   ├── pages/                 # Individual pages/views
+│   │   ├── styles/                # CSS / styling assets
+│   └── package.json               # Frontend dependencies and scripts
+│
+├── backend/                       # Backend (Node.js + Express)
+│   ├── src/
+│   │   ├── models/                # MongoDB schemas
+│   │   ├── routes/                # API endpoints
+│   │   ├── middleware/            # Security, auth, etc.
+│   │   ├── config/                # DB connection and configs
+│   └── package.json               # Backend dependencies and scripts
+│
+├── infra/                         # Infrastructure as Code (Terraform)
+│   ├── main.tf                    # Main configuration
+│   ├── variables.tf               # Input variables
+│   └── terraform.tfvars.example  # Sample configuration file
+│
+└── docs/                          # Project documentation
+
 ```
 
 ---
