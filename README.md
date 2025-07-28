@@ -41,6 +41,14 @@ A **cloud-native, full-stack e-commerce application** that demonstrates producti
 * Optimized with **compression, caching, and validations**
 * Structured for **unit and integration testing**
 
+### 🔐 **Enterprise Security**
+- 🔑 **HashiCorp Vault** - Centralized secret management  
+- 🔄 **Secret Rotation** - Automated credential updates  
+- 🛡️ **Zero Hardcoded Secrets** - All credentials vault-managed  
+- 🔒 **Multi-Environment** - Secure config per environment  
+- 📊 **Audit Logging** - Complete security compliance  
+- 🚨 **Real-time Monitoring** - Security event tracking  
+
 ---
 
 ## 🏗️ Architecture
