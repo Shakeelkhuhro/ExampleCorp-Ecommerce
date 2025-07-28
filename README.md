@@ -47,14 +47,127 @@ A **cloud-native, full-stack e-commerce application** that demonstrates producti
 
 ```mermaid
 graph TB
-    A[User] --> B[React Frontend]
-    B --> C[Express API]
-    C --> D[MongoDB]
-    C --> E[JWT Auth]
-    B --> F[React Router]
-    G[GitHub Actions] --> H[Terraform]
-    H --> I[DigitalOcean]
-    J[Ansible] --> I
+    subgraph "🎭 Frontend Layer"
+        A[👤 User] --> B[⚛️ React App]
+        B --> B1[🏠 HomePage]
+        B --> B2[🛍️ ProductsPage]
+        B --> B3[🛒 Shopping Cart]
+        B --> B4[👤 User Profile]
+        B5[🎨 Components] --> B
+        B6[📱 React Router] --> B
+    end
+    
+    subgraph "🌐 API Gateway Layer"
+        B --> C[🔗 Express.js API]
+        C --> C1[🔐 Auth Middleware]
+        C --> C2[✅ Validation]
+        C --> C3[🛡️ Security Headers]
+        C --> C4[📊 Rate Limiting]
+    end
+    
+    subgraph "🎯 Business Logic Layer"
+        C --> D1[📦 Product Service]
+        C --> D2[👥 User Service] 
+        C --> D3[🛒 Order Service]
+        C --> D4[🔐 Auth Service]
+        D1 --> D5[📝 CRUD Operations]
+        D2 --> D5
+        D3 --> D5
+    end
+    
+    subgraph "💾 Data Layer"
+        D5 --> E[🍃 MongoDB]
+        E --> E1[👥 Users Collection]
+        E --> E2[📦 Products Collection]
+        E --> E3[🛒 Orders Collection]
+        E --> E4[📊 Indexes & Relations]
+    end
+    
+    subgraph "🔐 Security Layer"
+        F1[🔑 JWT Tokens] --> C1
+        F2[🔒 bcrypt Hashing] --> D2
+        F3[🛡️ Helmet Security] --> C3
+        F4[🌐 CORS Policy] --> C
+    end
+    
+    subgraph "🚀 DevOps Pipeline"
+        G[📱 GitHub Repo] --> H[🔄 GitHub Actions]
+        H --> H1[🧪 CI Testing]
+        H --> H2[🏗️ Build Process]
+        H2 --> I[🐳 Docker Images]
+        I --> J[📦 Docker Hub]
+        J --> K[☁️ DigitalOcean]
+    end
+    
+    subgraph "🏗️ Infrastructure"
+        L[📋 Terraform] --> M[🌐 Load Balancer]
+        L --> N[🖥️ Droplets]
+        L --> O[🔧 Networking]
+        P[⚙️ Ansible] --> N
+        M --> N
+        N --> K
+    end
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style E fill:#fff3e0
+    style G fill:#fce4ec
+```
+
+### 🔄 **Data Flow Architecture**
+
+```mermaid
+sequenceDiagram
+    participant U as 👤 User
+    participant F as ⚛️ Frontend
+    participant A as 🔗 API
+    participant M as 🛡️ Middleware
+    participant S as 🎯 Service
+    participant D as 💾 Database
+    
+    U->>F: Interact with UI
+    F->>A: HTTP Request
+    A->>M: Security Check
+    M->>M: Validate & Authenticate
+    M->>S: Process Business Logic
+    S->>D: Database Operation
+    D->>S: Return Data
+    S->>A: Formatted Response
+    A->>F: JSON Response
+    F->>U: Updated UI
+```
+
+### 🏗️ **Microservices-Ready Design**
+
+```mermaid
+graph LR
+    subgraph "🎯 Core Services"
+        A1[👥 User Service]
+        A2[📦 Product Service]
+        A3[🛒 Order Service]
+        A4[💳 Payment Service]
+    end
+    
+    subgraph "🔧 Support Services"
+        B1[🔐 Auth Service]
+        B2[📧 Email Service]
+        B3[📊 Analytics Service]
+        B4[🔍 Search Service]
+    end
+    
+    subgraph "🌐 API Gateway"
+        C[🚪 Gateway]
+    end
+    
+    C --> A1
+    C --> A2
+    C --> A3
+    C --> A4
+    C --> B1
+    C --> B2
+    C --> B3
+    C --> B4
 ```
 
 ## 🌐 Tech Stack
