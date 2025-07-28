@@ -1,0 +1,36 @@
+- name: Deploy ExampleCorp containers
+  hosts: droplet
+  become: true
+
+  vars:
+    dockerhub_username: "{{ lookup('env', 'dockerhub_username') }}"
+    dockerhub_password: "{{ lookup('env', 'dockerhub_password') }}"
+
+  tasks:
+    - name: Ensure deployment directory exists
+      file:
+        path: /opt/examplecorp
+        state: directory
+        mode: '0755'
+
+    - name: Copy docker-compose.yml
+      copy:
+        src: ../docker-compose.yml
+        dest: /opt/examplecorp/docker-compose.yml
+
+    - name: Log in to DockerHub
+      shell: echo "{{ dockerhub_password }}" | docker login -u "{{ dockerhub_username }}" --password-stdin
+      environment:
+        dockerhub_password: "{{ dockerhub_password }}"
+        dockerhub_username: "{{ dockerhub_username }}"
+
+    - name: Pull latest Docker images
+      shell: |
+        docker pull shakeelkhuhro/examplecorp-backend:latest
+        docker pull shakeelkhuhro/examplecorp-frontend:latest
+
+    - name: Restart Docker containers using Compose
+      shell: |
+        cd /opt/examplecorp
+        docker compose down
+        docker compose up -d
