@@ -32,9 +32,8 @@
     - name: Restart Docker containers using Compose
       shell: |
         cd /opt/examplecorp
-        docker compose down
-        docker compose up -d
-
-
-vars_files:
-  - secrets.yml
+            docker compose down
+            docker compose up -d
+    
+      vars_files:
+        - secrets.yml
